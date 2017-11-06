@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.views import generic
 from django.views.generic.edit import (
     FormView,
@@ -22,7 +23,7 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     queryset = Post.objects.all()
-    template_name = 'articles/post-detail.html'
+    template_name = 'articles/post-details.html'
     slug_field = 'slug'
 
     def get_slug_field(self):
@@ -30,4 +31,4 @@ class DetailView(generic.DetailView):
 
     def post_projects(self):
         self.post = get_object_or_404(Post, slug=self.kwargs['slug'])
-        return Post.objects.filter(Post=self.post)
+        return Post.objects.filter(post=self.post)

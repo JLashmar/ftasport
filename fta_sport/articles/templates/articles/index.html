@@ -1,3 +1,16 @@
 {% include "base.html" %}
-{{post.title}}
-hi bois
+
+
+{% block content %}
+
+{% if all_posts %}
+
+    {% for post in all_posts %}
+        <a href="{% url 'articles:article-detail' post.slug %}">{{ post.title }}</a>
+    {% endfor %}
+
+{% else %}
+    <p>No blog posts have been created yet!</p>
+{% endif %}
+
+{% endblock %}

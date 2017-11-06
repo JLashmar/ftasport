@@ -4,12 +4,11 @@ from .models import Post, Sport
 
 @admin.register(Sport)
 class SportAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'sport')
+    list_display = ('title', 'slug')
     prepopulated_fields = {'slug': ('title',)}
 
-    def sport(self, object):
-        return "\n".join([a.title for a in obj.sport.all()])
 
 @admin.register(Post)
 class PostArticle(admin.ModelAdmin):
     list_display = ('title', 'body')
+    prepopulated_fields = {'slug': ('title',)}
