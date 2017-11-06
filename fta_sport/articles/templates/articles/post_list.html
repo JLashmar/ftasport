@@ -1,0 +1,10 @@
+{% include "base.html" %}
+
+
+{% if all_posts %}
+
+{% for post in all_posts %}
+  {{post.title}}
+{% endfor %}
+
+{% endif %}
