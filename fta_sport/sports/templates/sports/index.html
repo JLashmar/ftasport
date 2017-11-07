@@ -1,0 +1,10 @@
+{% include "base.html" %}
+
+Sports Index!
+
+{% for sport_category in all_sport_category %}
+  <li>{{ sport_category.name }} </li>
+  {% for sports in sport_category.sport_set.all %}
+    <li>{{ sports.name }}</li>
+  {% endfor %}
+{% endfor %}
