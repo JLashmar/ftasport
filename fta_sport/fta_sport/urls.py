@@ -20,7 +20,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('articles.urls')),
+    url(r'^news/', include('articles.urls')),
+    url(r'^home/', include('sports.urls')),
 ]
 
 if settings.DEBUG:
