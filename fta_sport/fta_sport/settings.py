@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'context_processors.menu.context_processors.categories',
             ],
         'loaders':{
             'django.template.loaders.filesystem.Loader',

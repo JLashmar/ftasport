@@ -23,29 +23,9 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">FTA Sport</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          {% for sport_category in all_sport_category %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ sport_category.name }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% for sports in sport_category.sport_set.all %}
-                {{ sports.name }}
-              {% endfor %}
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
+{% block main_menu %}
+  {% include "main_menu.html" %}
+{% endblock %}
 
 {% block content %}
 

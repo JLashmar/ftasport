@@ -3,9 +3,9 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.views import generic
-
 #my stuff
 from sports.models import Sport_Category, Sport
+import datetime
 
 class IndexView(generic.ListView):
 	template_name="sports/index.html"
@@ -13,11 +13,8 @@ class IndexView(generic.ListView):
 
 	def get_queryset(self):
 		return Sport_Category.objects.all()
-	
-	def list_of_sports_in_category(self):
-		sport_cat = self.category.name
-		return sport_cat
 
+#unused in templates
 class ListView(generic.ListView):
 	template_name="sports/sport-category.html"
 	context_object_name='category_list'

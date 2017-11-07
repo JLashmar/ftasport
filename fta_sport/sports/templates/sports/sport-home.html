@@ -1,7 +1,7 @@
-sport home page
+{% extends "base.html" %}
 
-{{ self.sport_list }}
-
+{% block content %}
 {% for sport in sport_list %}
-  <li>{{ sport.name}}</li>
+<li>{{sport.name}}</li>
 {% endfor %}
+{% endblock %}
