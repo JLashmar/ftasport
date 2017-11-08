@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import permalink
 from django.core.urlresolvers import reverse
-
+from sports.models import Sport, Sport_Category
 
 # Create your models here.
 

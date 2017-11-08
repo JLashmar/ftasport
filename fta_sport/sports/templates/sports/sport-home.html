@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for sport in sport_list %}
-<li>{{sport.name}}</li>
+
+{% if all_posts %}
+
+{% for post in all_posts %}
+  {{post.title}}
 {% endfor %}
+
+{% endif %}
+
 {% endblock %}
