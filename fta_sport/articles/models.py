@@ -7,27 +7,13 @@ from sports.models import Sport, Sport_Category
 
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100, unique=True)
+    post_slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
-    category = models.ForeignKey('Sport', related_name='category')
+    post_category = models.ForeignKey('sports.Sport', related_name='post_category')
 
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('articles:article-detail', kwargs={'slug':self.slug})
-
-class Sport(models.Model):
-    title = models.CharField(max_length=100, db_index=True)
-    slug = models.SlugField(max_length=100, db_index=True)
-
-    def __unicode__(self):
-        return '%s' % self.title
-
-    def __str__(self):
-       return 'Sport: ' + self.title
-
-    @permalink
-    def get_absolute_url(self):
-        return ('view_sport', None, { 'slug': self.slug })
+        return reverse('articles:article-detail', kwargs={'slug':self.post_slug})

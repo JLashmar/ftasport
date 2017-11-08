@@ -24,11 +24,11 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     queryset = Post.objects.all()
     template_name = 'articles/post-details.html'
-    slug_field = 'slug'
+    slug_field = 'post_slug'
 
     def get_slug_field(self):
         return self.slug_field
 
     def post_projects(self):
-        self.post = get_object_or_404(Post, slug=self.kwargs['slug'])
+        self.post = get_object_or_404(Post, slug=self.kwargs['post_slug'])
         return Post.objects.filter(post=self.post)

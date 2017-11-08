@@ -1,14 +1,9 @@
 from django.contrib import admin
 
-from .models import Post, Sport
-
-@admin.register(Sport)
-class SportAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug')
-    prepopulated_fields = {'slug': ('title',)}
+from .models import Post
 
 
 @admin.register(Post)
 class PostArticle(admin.ModelAdmin):
     list_display = ('title', 'body')
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {'post_slug': ('title',)}
