@@ -28,6 +28,6 @@ class SportListView(generic.ListView):
 	context_object_name='sport_list'
 
 	def get_queryset(self):
-		self.post = get_object_or_404(Sport, sport_slug=self.kwargs['sport_slug'])
-		return Sport.objects.filter(sport_slug=self.post)
-	##with this we are filtering the sports by the posts, instead we need to filter the posts by sport. 
+		self.sport = get_object_or_404(Sport, sport_slug=self.kwargs['sport_slug'])
+		return Post.objects.filter(post_category=self.sport)
+	##with this we are filtering the sports by the posts, instead we need to filter the posts by sport.

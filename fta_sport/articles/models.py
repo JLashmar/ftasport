@@ -9,6 +9,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     post_slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
+    headline_image = models.FileField()
+    post_image = models.FileField()
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     post_category = models.ForeignKey('sports.Sport', related_name='post_category')
 

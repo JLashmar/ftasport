@@ -2,10 +2,14 @@
 
 {% block content %}
 
-{{ sport.name }}
+{% for post in sport_list %}
+  <a href="{% url 'articles:article-detail' post.post_slug %}">
+    <img src="{{ post.headline_image.url }}" alt="">
+    <li>{{ post.title }}</li>
+  </a>
 
-{% for sports in sport_list %}
-  {{ sport.name }} hi son
+  {% empty %}
+  Sorry, we have no articles for this yet
 {% endfor %}
 
 
