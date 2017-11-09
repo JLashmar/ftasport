@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.views import generic
 #my stuff
 from sports.models import Sport_Category, Sport
+from articles.models import Post
 import datetime
 
 class IndexView(generic.ListView):
@@ -27,4 +28,6 @@ class SportListView(generic.ListView):
 	context_object_name='sport_list'
 
 	def get_queryset(self):
-		return Sport.objects.all()
+		self.post = get_object_or_404(Sport, sport_slug=self.kwargs['sport_slug'])
+		return Sport.objects.filter(sport_slug=self.post)
+	##with this we are filtering the sports by the posts, instead we need to filter the posts by sport. 
