@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     'articles',
     'sports',
+    'monthly_view'
+
 ]
 
 MIDDLEWARE = [
