@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-this is the post detail
-
-<h1>{{ post.title }}</h1>
-
-{{ post.body }}
+<div class="container">
+  <div class="row">
+    <div class="post-body">
+        <div class="img col-6 mr-3"><img class="float-left article-img" src="{{ post.headline_image.url }}" alt="Card image cap"></div>
+      <div class="main-body pl-2">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.body|linebreaks }}</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

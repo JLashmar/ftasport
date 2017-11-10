@@ -5,5 +5,5 @@ from .models import Post
 
 @admin.register(Post)
 class PostArticle(admin.ModelAdmin):
-    list_display = ('title', 'body', 'headline_image', 'post_image')
+    list_display = ('title', 'post_category', 'headline_image', 'post_image', 'posted')
     prepopulated_fields = {'post_slug': ('title',)}

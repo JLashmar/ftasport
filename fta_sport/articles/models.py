@@ -8,9 +8,10 @@ from sports.models import Sport, Sport_Category
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     post_slug = models.SlugField(max_length=100, unique=True)
+    short_description = models.CharField(max_length=150, blank=True, null=True)
     body = models.TextField()
-    headline_image = models.FileField()
-    post_image = models.FileField()
+    headline_image = models.FileField(blank=True, null=True)
+    post_image = models.FileField(blank=True, null=True)
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     post_category = models.ForeignKey('sports.Sport', related_name='post_category')
 
