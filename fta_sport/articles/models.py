@@ -1,33 +1,24 @@
 from django.db import models
 from django.db.models import permalink
 from django.core.urlresolvers import reverse
-
+from sports.models import Sport, Sport_Category, Team
 
 # Create your models here.
 
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100, unique=True)
+    post_slug = models.SlugField(max_length=100, unique=True)
+    short_description = models.CharField(max_length=150, blank=True, null=True)
     body = models.TextField()
+    headline_image = models.FileField(blank=True, null=True)
+    post_image = models.FileField(blank=True, null=True)
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
-    category = models.ForeignKey('Sport', related_name='category')
+    post_category = models.ForeignKey('sports.Sport', related_name='post_category')
+    team_a = models.ForeignKey('sports.Team', related_name='first_team')
+    team_b = models.ForeignKey('sports.Team', related_name='second_team')
 
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('articles:article-detail', kwargs={'slug':self.slug})
-
-class Sport(models.Model):
-    title = models.CharField(max_length=100, db_index=True)
-    slug = models.SlugField(max_length=100, db_index=True)
-
-    def __unicode__(self):
-        return '%s' % self.title
-
-    def __str__(self):
-       return 'Sport: ' + self.title
-
-    @permalink
-    def get_absolute_url(self):
-        return ('view_sport', None, { 'slug': self.slug })
+        return reverse('articles:article-detail', kwargs={'slug':self.post_slug})

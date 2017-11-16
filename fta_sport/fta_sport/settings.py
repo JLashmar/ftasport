@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_countries',
+
     'articles',
+    'cricket',
     'sports',
+    'monthly_view',
+
+
 ]
 
 MIDDLEWARE = [
@@ -66,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'context_processors.menu.context_processors.categories',
             ],
         'loaders':{
             'django.template.loaders.filesystem.Loader',
