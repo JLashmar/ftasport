@@ -1,4 +1,5 @@
 from django.db import models
+from django_countries.fields import CountryField
 
 # Create your models here.
 
@@ -56,6 +57,7 @@ class MatchType(models.Model):
 
 class Team(models.Model):
     sport = models.ForeignKey('Sport', on_delete=models.CASCADE)
+    country = CountryField()
     team_name = models.CharField(max_length=250)
     gender = models.ForeignKey('Gender', on_delete=models.CASCADE)
     tier = models.ForeignKey('Tier', on_delete=models.CASCADE)
