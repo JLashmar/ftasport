@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from sports.models import Team, MatchType
+from sports.models import Team, MatchType, Tier
 from django_countries.fields import CountryField
 
 # Create your models here.
@@ -8,11 +8,12 @@ from django_countries.fields import CountryField
 class CricketPlayer(models.Model):
     first_name = models.CharField(max_length=50, blank=True)
     second_name = models.CharField(max_length=50, blank=True)
-    international_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='international_team')
-    domestic_teams = models.ManyToManyField('sports.Team', related_name='domestic_teams')
+    international_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='cricket_international_team')
+    domestic_teams = models.ManyToManyField('sports.Team', related_name='cricket_domestic_teams')
 
 class Tour(models.Model):
     name = models.CharField(max_length=200)
+    tier_level = models.ForeignKey('sports.Tier')
     country = CountryField()
 
     def __unicode__(self):
@@ -22,8 +23,8 @@ class Match(models.Model):
     tour = models.ForeignKey('Tour', on_delete=models.CASCADE)
     start_date = models.DateTimeField(blank=True)
     end_date = models.DateTimeField(blank=True)
-    home_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='home_team')
-    away_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='away_team')
+    home_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='cricket_home_team')
+    away_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='cricket_away_team')
 
 class InningsScorecard(models.Model):
     fixture = models.ForeignKey(Match)
