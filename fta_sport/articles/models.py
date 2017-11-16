@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import permalink
 from django.core.urlresolvers import reverse
-from sports.models import Sport, Sport_Category
+from sports.models import Sport, Sport_Category, Team
 
 # Create your models here.
 
@@ -14,6 +14,8 @@ class Post(models.Model):
     post_image = models.FileField(blank=True, null=True)
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     post_category = models.ForeignKey('sports.Sport', related_name='post_category')
+    team_a = models.ForeignKey('sports.Team', related_name='first_team')
+    team_b = models.ForeignKey('sports.Team', related_name='second_team')
 
     def __unicode__(self):
         return self.title

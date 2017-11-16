@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^news/', include('articles.urls')),
     url(r'^home/', include('sports.urls')),
+    url(r'^cricket-view/', include('cricket.urls')),
     url(r'^monthly-view/', include('monthly_view.urls')),
 ]
 

@@ -1,0 +1,12 @@
+{% include "base.html" %}
+
+monthly_view
+
+{% for match_info in cricket_monthly_view %}
+  <ul>
+    <li>{{match_info.home_team}}</li>
+    <li>{{match_info.away_team}}</li>
+    <li>{{match_info.match_format}}</li>
+    <li>{{match_info.date}}</li>
+  </ul>
+{% endfor %}

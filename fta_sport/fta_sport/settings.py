@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'articles',
+    'cricket',
     'sports',
-    'monthly_view'
+    'monthly_view',
+
 
 ]
 
