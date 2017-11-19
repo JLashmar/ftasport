@@ -11,16 +11,13 @@ class CricketPlayer(models.Model):
     international_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='cricket_international_team')
     domestic_teams = models.ManyToManyField('sports.Team', related_name='cricket_domestic_teams')
 
-    def __str__(self):
-        return self.first_name + ' ' + self.second_name
-
 class Tour(models.Model):
     name = models.CharField(max_length=200)
     tier_level = models.ForeignKey('sports.Tier')
     country = CountryField()
 
-    def __str__(self):
-        return self.name
+    def __unicode__(self):
+        return str(self.name)
 
 class Match(models.Model):
     tour = models.ForeignKey('Tour', on_delete=models.CASCADE)
@@ -28,10 +25,6 @@ class Match(models.Model):
     end_date = models.DateTimeField(blank=True)
     home_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='cricket_home_team')
     away_team = models.ForeignKey('sports.Team', on_delete=models.CASCADE, related_name='cricket_away_team')
-
-    def __str__(self):
-        return str(self.id)
-
 
 class InningsScorecard(models.Model):
     fixture = models.ForeignKey(Match)
@@ -45,12 +38,12 @@ class InningsScorecard(models.Model):
     wickets = models.IntegerField(default=0)
     overs = models.FloatField(default=0.0)
 
-    def __str__(self):
+    def __unicode__(self):
         return str(self.team)
 
 class BattingDetail(models.Model):
     STATUS_CHOICES = (
-        ('not out', 'not out'),
+        ('NO', 'not out'),
         ('bowled', 'bowled'),
         ('caught', 'caught'),
         ('lbw', 'lbw'),
@@ -68,15 +61,12 @@ class BattingDetail(models.Model):
     fours = models.IntegerField(default=0)
     sixes = models.IntegerField(default=0)
     strike_rate = models.IntegerField(default=0)
-    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='not out')
-    bowled_by = models.ForeignKey('BowlingDetail', blank=True, null=True, on_delete=models.CASCADE, related_name='bowled_by')
-    caught_by = models.ForeignKey(CricketPlayer, blank=True, null=True, on_delete=models.CASCADE, related_name='caught_by')
+    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='NO')
 
-    def __str__(self):
+    def __unicode__(self):
         return str(self.player)
 
 class BowlingDetail(models.Model):
-    bowled = models.ForeignKey(BattingDetail, blank=True, null=True, on_delete=models.CASCADE, related_name='bowled')
     innings = models.ForeignKey(InningsScorecard)
     player = models.ForeignKey(CricketPlayer)
     runs = models.IntegerField(default=0)
@@ -85,12 +75,5 @@ class BowlingDetail(models.Model):
     overs = models.FloatField(default=0.0)
     economy = models.FloatField(default=0.0)
 
-    def __str__(self):
+    def __unicode__(self):
         return str(self.player)
-
-class FallofWicket(models.Model):
-    match = models.ForeignKey(Match, blank=True, null=True, on_delete=models.CASCADE, related_name='match_wickets')
-    innings = models.ForeignKey(InningsScorecard, blank=True, null=True, on_delete=models.CASCADE, related_name='innings_wickets')
-    batsman = models.ForeignKey(BattingDetail, blank=True, null=True, on_delete=models.CASCADE, related_name='batsman_dismissed')
-    wicket = models.IntegerField()
-    runs = models.IntegerField()

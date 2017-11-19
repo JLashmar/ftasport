@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tour, Match, InningsScorecard, CricketPlayer, BattingDetail, BowlingDetail, FallofWicket
+from .models import Tour, Match, InningsScorecard, CricketPlayer
 from sports.models import Team
 # Register your models here.
 
@@ -18,20 +18,8 @@ class TourAdmin(admin.ModelAdmin):
 
 @admin.register(Match)
 class CricketScorecardAdmin(admin.ModelAdmin):
-    list_display = ('id','tour','start_date', 'end_date','home_team', 'away_team')
+    list_display = ('start_date', 'end_date','home_team', 'away_team')
 
 @admin.register(InningsScorecard)
 class CricketInningsScorecardAdmin(admin.ModelAdmin):
     list_display = ('fixture', 'team')
-
-@admin.register(BattingDetail)
-class TourAdmin(admin.ModelAdmin):
-    list_display = ('player', 'runs')
-
-@admin.register(BowlingDetail)
-class TourAdmin(admin.ModelAdmin):
-    list_display = ('player', 'wickets')
-
-@admin.register(FallofWicket)
-class TourAdmin(admin.ModelAdmin):
-    list_display = ('match','innings', 'wicket', 'runs', 'batsman')

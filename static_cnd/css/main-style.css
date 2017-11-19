@@ -1,1 +1,64 @@
-body{background-color:blue}.container{background-color:pink}body{background-color:blue}.container{background-color:pink}.main-nav{background-color:#0E1C30;color:white;font-family:arial}.main-nav a{font-size:1.2rem;color:white}.main-nav .navbar-brand{font-size:2rem;color:#E5AB24}.main-nav .navbar-brand a:hover{color:#f7f7f7}.main-nav .navbar-brand .navbar-toggler{color:white}body{background-color:blue}.container{background-color:pink}h2{color:black}a{color:green}.channel-card a{color:blue;font-size:1rem;font-weight:bold;text-decoration:none}.channel-card .fa{color:grey}body{background-color:blue}.container{background-color:pink}body{background-color:blue}.container{background-color:pink}.carousel .carousel-item{height:300px}.carousel .carousel-item img{height:100%;max-width:100%;overflow:hidden}.article-card{border:2px;border-color:#0E1C30}a{color:#0E1C30}.post-body{background:white}.post-body img{padding-right:10px;width:100%;max-height:100%}.top-headline .top-title{background:#0E1C30;color:#E5AB24}
+/*
+Error: Inconsistent indentation: 6 spaces were used for indentation, but the rest of the document was indented using 4 spaces.
+        on line 8 of C:/Users/Jordan/Desktop/projects/ftasport/static_cnd/sass/_navbar.sass
+        from line 4 of C:\Users\Jordan\Desktop\projects\ftasport\static_cnd\sass\main-style.scss
+
+3: .navbar-default
+4:     background-color: $dark-background
+5:     color: white
+6: 
+7:     a
+8:       color: white
+9: 
+10:     .navbar-brand
+11:       font-size: 2rem
+12: 
+13:     a:hover
+
+Backtrace:
+C:/Users/Jordan/Desktop/projects/ftasport/static_cnd/sass/_navbar.sass:8
+C:\Users\Jordan\Desktop\projects\ftasport\static_cnd\sass\main-style.scss:4
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:486:in `block in tabulate'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:444:in `each_with_index'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:444:in `tabulate'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:409:in `_to_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:312:in `to_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/stack.rb:88:in `block in with_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/stack.rb:88:in `with_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:391:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:18:in `load'
+C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: 6 spaces were used for indentation, but the rest of the document was indented using 4 spaces.\A         on line 8 of C:/Users/Jordan/Desktop/projects/ftasport/static_cnd/sass/_navbar.sass\A         from line 4 of C:\Users\Jordan\Desktop\projects\ftasport\static_cnd\sass\main-style.scss\A \A 3: .navbar-default\A 4:     background-color: $dark-background\A 5:     color: white\A 6: \A 7:     a\A 8:       color: white\A 9: \A 10:     .navbar-brand\A 11:       font-size: 2rem\A 12: \A 13:     a:hover"; }
