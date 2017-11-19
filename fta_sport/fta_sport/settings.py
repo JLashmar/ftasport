@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
     'articles',
     'cricket',
+    'rugby',
+    'golf',
     'sports',
     'monthly_view',
 

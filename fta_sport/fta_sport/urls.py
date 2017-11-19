@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^news/', include('articles.urls')),
     url(r'^home/', include('sports.urls')),
     url(r'^cricket-view/', include('cricket.urls')),
+    url(r'^rugby-view/', include('rugby.urls')),
+    url(r'^golf-view/', include('golf.urls')),
     url(r'^monthly-view/', include('monthly_view.urls')),
 ]
 

@@ -6,4 +6,5 @@ app_name = 'monthly_view'
 
 urlpatterns = [
     url(r'^monthly-view/$', monthly_view.CricketCalendar.as_view(), name='cricket-monthly'),
+    url(r'^rugby-monthly/$', monthly_view.RugbyMonthlyView.as_view(), name='rugby-monthly'),
 ]
