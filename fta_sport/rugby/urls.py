@@ -5,5 +5,5 @@ from django.views.generic import TemplateView
 app_name = 'rugby'
 
 urlpatterns = [
-
+    url(r'^scorecard/(?P<pk>\d+)/$', rugby_views.RugbyDetail.as_view(), name='rugby-scorecard'),
 ]
